@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" role="img" aria-labelledby="title description">
+  <title id="title">VinyArt Studio: Rosalía, EL MAL QUERER</title>
+  <desc id="description">Ilustración original de un disco de vinilo negro sobre fondo coral.</desc>
+  <rect width="900" height="650" fill="#d65e37"/>
+  <path d="M0 520 300 350 520 650H0Z" fill="#e77a52" opacity=".7"/>
+  <path d="M900 0 655 0 900 205Z" fill="#bd472b" opacity=".7"/>
+  <g transform="translate(565 325) rotate(-12)">
+    <circle r="245" fill="#20221d"/>
+    <circle r="222" fill="none" stroke="#55564d" stroke-width="2"/>
+    <circle r="205" fill="none" stroke="#45463f" stroke-width="2"/>
+    <circle r="184" fill="none" stroke="#55564d" stroke-width="2"/>
+    <circle r="163" fill="none" stroke="#45463f" stroke-width="2"/>
+    <circle r="141" fill="none" stroke="#55564d" stroke-width="2"/>
+    <circle r="119" fill="none" stroke="#45463f" stroke-width="2"/>
+    <circle r="91" fill="#f4f0e7"/>
+    <circle r="12" fill="#20221d"/>
+    <path d="M-66-53 Q0-104 66-53 L66 53 Q0 104-66 53Z" fill="#e9a083" opacity=".75"/>
+    <circle r="12" fill="#20221d"/>
+  </g>
+  <g fill="#f4f0e7" font-family="Georgia,serif">
+    <text x="64" y="118" font-size="19" letter-spacing="6">VINYART STUDIO PRESENTA</text>
+    <text x="58" y="270" font-size="68" font-weight="700">ROSALÍA</text>
+    <path d="M64 294H320" stroke="#f4f0e7" stroke-width="2"/>
+    <text x="64" y="344" font-size="28" letter-spacing="4">EL MAL QUERER</text>
+    <text x="64" y="590" font-family="Arial,sans-serif" font-size="13" letter-spacing="3">UNA ESCUCHA PARA DESCUBRIR EN VINILO</text>
+  </g>
+  <circle cx="97" cy="404" r="5" fill="#20221d"/>
+  <circle cx="124" cy="404" r="5" fill="#20221d"/>
+  <circle cx="151" cy="404" r="5" fill="#20221d"/>
+</svg>
