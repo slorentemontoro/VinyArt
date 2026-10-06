@@ -8,7 +8,77 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="styles.css">
+	<style>
+		:root {
+			--ink: #20221d;
+			--paper: #f4f0e7;
+			--orange: #d65e37;
+			--green: #354b3d;
+			--line: #d8d1c4;
+			--serif: "Playfair Display", Georgia, serif;
+			--sans: "DM Sans", Arial, sans-serif;
+		}
+
+		* { box-sizing: border-box; }
+		html { scroll-behavior: smooth; }
+		body { background: var(--paper); color: var(--ink); font-family: var(--sans); margin: 0; }
+		a { color: inherit; text-decoration: none; }
+		.layout { display: grid; grid-template-columns: 230px minmax(0, 1fr); min-height: 100vh; }
+		.sidebar { border-right: 1px solid var(--line); display: flex; flex-direction: column; padding: 35px 28px; }
+		.brand { align-items: center; display: flex; font-family: var(--serif); gap: 10px; line-height: 1; }
+		.brand-mark { background: radial-gradient(circle, var(--orange) 0 14%, var(--ink) 15% 19%, #393b33 20% 31%, #20221d 32% 45%, #46463d 46% 49%, #20221d 50%); border-radius: 50%; box-shadow: 0 0 0 1px var(--ink); display: block; flex: 0 0 36px; height: 36px; }
+		.brand-wordmark { display: grid; gap: 4px; }
+		.brand-wordmark strong { font-size: 20px; font-weight: 700; }
+		.brand-wordmark small { color: var(--orange); font-family: var(--sans); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+		.side-note { color: #77776e; font-size: 10px; letter-spacing: 1.4px; margin: 10px 0 70px; text-transform: uppercase; }
+		.nav-title { color: #89877e; font-size: 10px; letter-spacing: 1.5px; margin: 0 0 15px; text-transform: uppercase; }
+		nav { display: grid; gap: 6px; }
+		nav a { border-left: 2px solid transparent; font-size: 13px; padding: 11px 12px; transition: background .2s, border-color .2s; }
+		nav a:hover, nav a:focus-visible { background: #e9e2d5; border-color: var(--orange); outline: none; }
+		.sidebar-bottom { border-top: 1px solid var(--line); color: #77776e; font-size: 11px; line-height: 1.6; margin-top: auto; padding-top: 18px; }
+		main { min-width: 0; }
+		.topline { align-items: center; display: flex; justify-content: space-between; padding: 25px 6.5vw; }
+		.topline p { color: #77776e; font-size: 11px; margin: 0; }
+		.topline .open-label { color: var(--green); font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+		.hero { align-items: center; display: grid; gap: 7%; grid-template-columns: minmax(260px, .85fr) minmax(300px, 1.15fr); margin: 34px auto 95px; max-width: 1320px; padding: 0 6.5vw; }
+		.hero-copy { padding: 20px 0; }
+		.eyebrow { color: var(--orange); font-size: 10px; font-weight: 700; letter-spacing: 1.7px; margin: 0 0 20px; text-transform: uppercase; }
+		h1, h2 { font-family: var(--serif); font-weight: 600; }
+		h1 { font-size: clamp(48px, 6vw, 78px); letter-spacing: 0; line-height: 1.02; margin: 0 0 22px; }
+		h1 em { color: var(--orange); font-weight: 600; }
+		.welcome { color: #62635b; font-size: 15px; line-height: 1.7; margin: 0; max-width: 380px; }
+		.catalog-link { align-items: center; background: var(--green); color: white; display: inline-flex; font-size: 12px; font-weight: 700; gap: 26px; margin-top: 30px; padding: 15px 19px; transition: background .2s, transform .2s; }
+		.catalog-link:hover { background: var(--orange); transform: translateY(-2px); }
+		.catalog-link span { font-size: 18px; line-height: 1; }
+		.feature { min-height: 425px; overflow: hidden; position: relative; }
+		.feature img { display: block; height: 100%; inset: 0; object-fit: cover; position: absolute; width: 100%; }
+		.image-caption { background: var(--paper); bottom: 17px; font-size: 10px; letter-spacing: .8px; padding: 11px 14px; position: absolute; right: 17px; text-transform: uppercase; }
+		.about { background: var(--green); color: #f4f0e7; display: grid; gap: 9%; grid-template-columns: .7fr 1.3fr; padding: 55px 10%; }
+		.about-label { color: #e9a083; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+		.about h2 { font-size: clamp(29px, 3.5vw, 43px); line-height: 1.14; margin: 0 0 13px; }
+		.about p { color: #d5ddd4; font-size: 13px; line-height: 1.8; margin: 0; max-width: 560px; }
+		footer { color: #77776e; font-size: 10px; padding: 19px 6.5vw; }
+
+		@media (max-width: 900px) {
+			.layout { display: block; }
+			.sidebar { align-items: center; border-bottom: 1px solid var(--line); border-right: 0; display: grid; gap: 16px; grid-template-columns: 1fr auto; padding: 20px 6vw 14px; }
+			.side-note, .sidebar-bottom, .nav-title { display: none; }
+			nav { display: flex; gap: 3px; grid-column: 1 / -1; grid-row: 2; overflow-x: auto; }
+			nav a { border-bottom: 2px solid transparent; border-left: 0; font-size: 11px; padding: 9px 10px; white-space: nowrap; }
+			nav a:hover, nav a:focus-visible { border-bottom-color: var(--orange); }
+			.topline { padding: 16px 6vw; }
+			.hero { gap: 32px; grid-template-columns: 1fr; margin: 12px auto 55px; padding: 0 6vw; }
+			h1 { font-size: clamp(48px, 13vw, 68px); }
+			.feature { min-height: 330px; }
+			.about { gap: 17px; grid-template-columns: 1fr; padding: 38px 8vw 42px; }
+			footer { padding: 18px 6vw; }
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			html { scroll-behavior: auto; }
+			*, *::before, *::after { transition-duration: .01ms !important; }
+		}
+	</style>
 </head>
 <body>
 	<div class="layout">
