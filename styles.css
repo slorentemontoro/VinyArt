@@ -87,6 +87,18 @@ main { min-width: 0; }
 .feature-sleeve img { position: relative; z-index: 1; }
 .image-caption { background: var(--surface); bottom: 14px; color: var(--ink); font-size: 11px; font-weight: 700; left: 14px; letter-spacing: .06em; padding: 8px 12px; position: absolute; z-index: 2; }
 
+/* Historia de la artista y video */
+.artist-story { align-items: center; background: var(--surface); display: grid; gap: 6vw; grid-template-columns: minmax(0, 1fr) minmax(320px, 1fr); padding: 88px 5.5vw; }
+.story-copy { max-width: 620px; }
+.story-eyebrow { color: var(--rose-dark); font-size: 12px; font-weight: 700; letter-spacing: .12em; margin: 0 0 14px; text-transform: uppercase; }
+.story-copy h2 { font-size: clamp(38px, 4.6vw, 62px); line-height: 1.05; margin-bottom: 22px; }
+.story-copy p:not(.story-eyebrow) { color: var(--copy); font-size: 16px; margin: 0 0 16px; }
+.story-video h3 { font-size: 25px; margin: 0 0 14px; }
+.video-frame { aspect-ratio: 16 / 9; background: #211d1e; box-shadow: 0 16px 34px rgb(48 39 41 / 16%); }
+.video-frame iframe { border: 0; height: 100%; width: 100%; }
+.story-video > p { color: var(--muted); font-size: 13px; margin: 12px 0 0; }
+.video-link { color: var(--rose-dark); display: inline-block; font-size: 13px; font-weight: 700; margin-top: 6px; text-decoration: underline; text-underline-offset: 3px; }
+
 /* Catalogo: rejilla, tarjetas y portadas */
 .catalog { padding: 88px 5.5vw 100px; }
 .section-head { margin-bottom: 44px; max-width: 660px; }
@@ -156,6 +168,7 @@ footer { background: var(--paper); border-top: 1px solid var(--line); color: var
 	nav a:hover, nav a:focus-visible { border-bottom-color: var(--rose); }
 	.hero { gap: 38px; grid-template-columns: 1fr; min-height: 0; padding: 54px 6vw 60px; }
 	.feature { max-width: 480px; }
+	.artist-story { gap: 36px; grid-template-columns: 1fr; padding: 60px 6vw; }
 	.about { grid-template-columns: 1fr; padding: 60px 6vw; gap: 24px; }
 	.catalog { padding: 60px 6vw 70px; }
 	footer { padding: 18px 6vw; }
