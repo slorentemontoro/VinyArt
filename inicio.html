@@ -48,20 +48,21 @@
 				<div class="hero-copy">
 					<h1 id="main-title">VinyArt Studio</h1>
 					<p class="slogan">Rosalía, entre tradición y vanguardia.</p>
-					<p class="welcome">Bienvenido a VinyArt Studio. Celebramos <em>EL MAL QUERER</em>, el álbum con el que Rosalía llevó el flamenco a nuevos territorios. Pon la aguja y déjate llevar por cada detalle.</p>
-					<a class="catalog-link" href="#catalogo">Ver catálogo <span aria-hidden="true">→</span></a>
+					<p class="welcome"><em>EL MAL QUERER</em> es un álbum conceptual contado en capítulos, donde Rosalía mezcla raíces flamencas, palmas y jaleos con una producción actual. Una historia intensa que convierte cada canción en parte de un mismo relato.</p>
+					<p class="offer-price">34,90 €</p>
+					<a class="catalog-link" href="#catalogo">Comprar <span aria-hidden="true">→</span></a>
 				</div>
 				<div class="feature">
 					<img class="feature-record" src="img/vinilo-el-mal-querer.svg" alt="Vinilo rojo de EL MAL QUERER con la etiqueta dorada">
 					<figure class="feature-sleeve">
 						<span class="fallback" aria-hidden="true">EL MAL<br>QUERER</span>
-						<img src="img/rosalia-motomami.webp" alt="Portada del álbum EL MAL QUERER de ROSALÍA" onerror="this.remove()">
+						<img src="img/rosalia-malquerer.webp" alt="Portada del álbum EL MAL QUERER de ROSALÍA" onerror="this.remove()">
 					</figure>
 					<span class="image-caption">ROSALÍA · EL MAL QUERER</span>
 				</div>
 			</section>
 
-			<section class="catalog" id="catalogo" aria-labelledby="catalog-title">
+			<!-- <section class="catalog" id="catalogo" aria-labelledby="catalog-title">
 				<div class="section-head">
 					<h2 id="catalog-title">Catálogo Rosalía</h2>
 					<p>De la guitarra desnuda de Los Ángeles a la orquesta de LUX. Cinco discos en vinilo, de 2017 a 2025.</p>
@@ -113,7 +114,7 @@
 						</div>
 					</li>
 				</ul>
-			</section>
+			</section> -->
 
 			<section class="about" id="nosotros" aria-labelledby="about-title">
 				<div>
@@ -123,7 +124,36 @@
 				<p>VinyArt Studio es una tienda de vinilos para escuchar sin prisa. Nacimos para celebrar la música de Rosalía y su manera de unir tradición y vanguardia: elegimos cada edición pensando en sacar el disco de la funda, ponerlo en el plato y escuchar una cara entera, con todos sus detalles.</p>
 			</section>
 
-			<footer>VinyArt Studio · Una escucha con Rosalía · Precios de ejemplo</footer>
+			<footer class="site-footer" id="footer">
+				<div class="footer-main">
+					<div class="footer-brand">
+						<a class="brand footer-logo" href="#inicio" aria-label="VinyArt Studio, volver al inicio">
+							<span class="brand-mark" aria-hidden="true"></span>
+							<span class="brand-text"><strong>VinyArt</strong><small>Studio</small></span>
+						</a>
+						<p>Música con historia. Escucha a tu manera.</p>
+					</div>
+					<form class="footer-form">
+						<label for="footer-email">Recibe novedades de nuestra tienda</label>
+						<div class="footer-form-fields">
+							<input id="footer-email" name="email" type="email" placeholder="Tu correo electrónico" autocomplete="email" required>
+							<button type="button">Suscribirme</button>
+						</div>
+					</form>
+					<nav class="footer-social" aria-label="Redes sociales">
+						<a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+							<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle class="social-dot" cx="18" cy="6" r="1"></circle></svg>
+						</a>
+						<a href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+							<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 21v-8h3l.5-4H14V7c0-1.2.4-2 2-2h1.7V1.4C17 1.2 15.8 1 14.4 1 11 1 9 3 9 6.7V9H6v4h3v8z"></path></svg>
+						</a>
+						<a href="https://www.tiktok.com/" aria-label="TikTok" target="_blank" rel="noopener noreferrer">
+							<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.6 7.2a6.4 6.4 0 0 1-4.1-1.5v8.1a6.1 6.1 0 1 1-5.3-6.1v3.3a2.8 2.8 0 1 0 2 2.7V1.5h3.3a6.3 6.3 0 0 0 4.1 3.1z"></path></svg>
+						</a>
+					</nav>
+				</div>
+				<p class="footer-legal">VinyArt Studio · Una escucha con Rosalía · Precios de ejemplo</p>
+			</footer>
 		</main>
 	</div>
 </body>

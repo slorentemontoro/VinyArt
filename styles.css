@@ -73,6 +73,7 @@ main { min-width: 0; }
 .hero h1 { color: var(--ink); font-size: clamp(54px, 7.4vw, 112px); font-weight: 700; letter-spacing: -.035em; line-height: .98; margin-bottom: 20px; }
 .slogan { color: var(--rose-dark); font-family: var(--display); font-size: clamp(24px, 2.6vw, 34px); font-style: italic; font-weight: 500; line-height: 1.2; margin: 0 0 20px; }
 .welcome { color: var(--copy); font-size: 16px; margin: 0; max-width: 440px; }
+.offer-price { color: var(--rose-dark); font-family: var(--display); font-size: clamp(36px, 4vw, 48px); font-weight: 700; line-height: 1.1; margin: 18px 0 0; }
 .catalog-link { align-items: center; background: var(--rose); border: 1px solid var(--rose); border-radius: 3px; color: var(--paper); display: inline-flex; font-size: 14px; font-weight: 700; gap: 24px; margin-top: 34px; padding: 14px 22px; transition: background .2s, border-color .2s, transform .2s; }
 .catalog-link:hover { background: var(--rose-hover); border-color: var(--rose-hover); transform: translateY(-2px); }
 .catalog-link span { font-size: 20px; line-height: 1; }
@@ -119,6 +120,24 @@ main { min-width: 0; }
 .about p { color: var(--copy); font-size: 16px; margin: 0; max-width: 560px; }
 .about .rule { background: var(--rose); display: block; height: 3px; margin: 24px 0 0; width: 58px; }
 footer { background: var(--paper); border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; padding: 19px 5.5vw; }
+.site-footer { background: #823b46; border-top: 6px solid var(--gold); color: #f4efe9; padding: 52px 5.5vw 22px; }
+.footer-main { align-items: start; display: grid; gap: 36px; grid-template-columns: 1fr minmax(260px, 1.4fr) auto; }
+.footer-logo { width: fit-content; }
+.footer-logo .brand-text strong { color: #f4efe9; }
+.footer-brand > p { color: #f4efe9; font-size: 13px; margin: 14px 0 0; opacity: .82; }
+.footer-form { display: grid; gap: 12px; }
+.footer-form label { color: #f4efe9; font-size: 14px; font-weight: 700; }
+.footer-form-fields { display: flex; gap: 8px; }
+.footer-form input { background: var(--surface); border: 1px solid var(--line); border-radius: 3px; color: var(--ink); flex: 1; font: inherit; min-width: 0; padding: 11px 12px; }
+.footer-form button { background: #302729; border: 1px solid #302729; border-radius: 3px; color: #f4efe9; cursor: pointer; font: inherit; font-size: 13px; font-weight: 700; padding: 10px 15px; }
+.footer-form button:hover { background: #211d1e; border-color: #211d1e; }
+.footer-social { align-content: start; display: flex; gap: 12px; }
+.footer-social a { align-items: center; border: 2px solid #f4efe9; border-radius: 50%; color: #f4efe9; display: flex; height: 54px; justify-content: center; transition: background .2s, color .2s, transform .2s; width: 54px; }
+.footer-social a:hover { background: #f4efe9; color: #823b46; transform: translateY(-3px); }
+.footer-social svg { fill: none; height: 28px; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2; width: 28px; }
+.footer-social a:nth-child(2) svg, .footer-social a:nth-child(3) svg { fill: currentColor; stroke: none; }
+.footer-social .social-dot { fill: currentColor; stroke: none; }
+.footer-legal { border-top: 1px solid rgb(244 239 233 / 35%); color: #f4efe9; margin: 34px 0 0; opacity: .82; padding-top: 16px; }
 
 /* Adaptacion para pantallas medianas */
 @media (max-width: 1100px) {
@@ -140,6 +159,9 @@ footer { background: var(--paper); border-top: 1px solid var(--line); color: var
 	.about { grid-template-columns: 1fr; padding: 60px 6vw; gap: 24px; }
 	.catalog { padding: 60px 6vw 70px; }
 	footer { padding: 18px 6vw; }
+	.footer-main { grid-template-columns: 1fr 1fr; }
+	.footer-form { grid-column: 1 / -1; grid-row: 2; }
+	.footer-social { grid-column: 2; grid-row: 1; justify-self: end; }
 }
 
 /* Ajustes para moviles pequenos */
@@ -150,6 +172,9 @@ footer { background: var(--paper); border-top: 1px solid var(--line); color: var
 	.grid { gap: 18px; }
 	.card-body { padding: 18px; }
 	.feature { width: min(100%, 390px); }
+	.footer-main { grid-template-columns: 1fr; gap: 24px; }
+	.footer-form, .footer-social { grid-column: auto; grid-row: auto; justify-self: stretch; }
+	.footer-social { display: flex; flex-wrap: wrap; gap: 12px; }
 }
 
 /* Respeta la preferencia de movimiento reducido */
