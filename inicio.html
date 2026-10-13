@@ -3,92 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="VinyArt Studio, una tienda de vinilos para escuchar sin prisa.">
+	<meta name="description" content="VinyArt Studio, una tienda de vinilos para escuchar sin prisa. Especial Rosalía.">
 	<title>VinyArt Studio | Rosalía en vinilo</title>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-	<style>
-		:root {
-			--ink: #20221d;
-			--paper: #f4f0e7;
-			--orange: #d65e37;
-			--green: #354b3d;
-			--line: #d8d1c4;
-			--serif: "Playfair Display", Georgia, serif;
-			--sans: "DM Sans", Arial, sans-serif;
-		}
-
-		* { box-sizing: border-box; }
-		html { scroll-behavior: smooth; }
-		body { background: var(--paper); color: var(--ink); font-family: var(--sans); margin: 0; }
-		a { color: inherit; text-decoration: none; }
-		.layout { display: grid; grid-template-columns: 230px minmax(0, 1fr); min-height: 100vh; }
-		.sidebar { border-right: 1px solid var(--line); display: flex; flex-direction: column; padding: 35px 28px; }
-		.brand { align-items: center; display: flex; font-family: var(--serif); gap: 10px; line-height: 1; }
-		.brand-mark { background: radial-gradient(circle, var(--orange) 0 14%, var(--ink) 15% 19%, #393b33 20% 31%, #20221d 32% 45%, #46463d 46% 49%, #20221d 50%); border-radius: 50%; box-shadow: 0 0 0 1px var(--ink); display: block; flex: 0 0 36px; height: 36px; }
-		.brand-wordmark { display: grid; gap: 4px; }
-		.brand-wordmark strong { font-size: 20px; font-weight: 700; }
-		.brand-wordmark small { color: var(--orange); font-family: var(--sans); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
-		.side-note { color: #77776e; font-size: 10px; letter-spacing: 1.4px; margin: 10px 0 70px; text-transform: uppercase; }
-		.nav-title { color: #89877e; font-size: 10px; letter-spacing: 1.5px; margin: 0 0 15px; text-transform: uppercase; }
-		nav { display: grid; gap: 6px; }
-		nav a { border-left: 2px solid transparent; font-size: 13px; padding: 11px 12px; transition: background .2s, border-color .2s; }
-		nav a:hover, nav a:focus-visible { background: #e9e2d5; border-color: var(--orange); outline: none; }
-		.sidebar-bottom { border-top: 1px solid var(--line); color: #77776e; font-size: 11px; line-height: 1.6; margin-top: auto; padding-top: 18px; }
-		main { min-width: 0; }
-		.topline { align-items: center; display: flex; justify-content: space-between; padding: 25px 6.5vw; }
-		.topline p { color: #77776e; font-size: 11px; margin: 0; }
-		.topline .open-label { color: var(--green); font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-		.hero { align-items: center; display: grid; gap: 7%; grid-template-columns: minmax(260px, .85fr) minmax(300px, 1.15fr); margin: 34px auto 95px; max-width: 1320px; padding: 0 6.5vw; }
-		.hero-copy { padding: 20px 0; }
-		.eyebrow { color: var(--orange); font-size: 10px; font-weight: 700; letter-spacing: 1.7px; margin: 0 0 20px; text-transform: uppercase; }
-		h1, h2 { font-family: var(--serif); font-weight: 600; }
-		h1 { font-size: clamp(48px, 6vw, 78px); letter-spacing: 0; line-height: 1.02; margin: 0 0 22px; }
-		h1 em { color: var(--orange); font-weight: 600; }
-		.welcome { color: #62635b; font-size: 15px; line-height: 1.7; margin: 0; max-width: 380px; }
-		.catalog-link { align-items: center; background: var(--green); color: white; display: inline-flex; font-size: 12px; font-weight: 700; gap: 26px; margin-top: 30px; padding: 15px 19px; transition: background .2s, transform .2s; }
-		.catalog-link:hover { background: var(--orange); transform: translateY(-2px); }
-		.catalog-link span { font-size: 18px; line-height: 1; }
-		.feature { min-height: 425px; overflow: hidden; position: relative; }
-		.feature img { display: block; height: 100%; inset: 0; object-fit: cover; position: absolute; width: 100%; }
-		.image-caption { background: var(--paper); bottom: 17px; font-size: 10px; letter-spacing: .8px; padding: 11px 14px; position: absolute; right: 17px; text-transform: uppercase; }
-		.about { background: var(--green); color: #f4f0e7; display: grid; gap: 9%; grid-template-columns: .7fr 1.3fr; padding: 55px 10%; }
-		.about-label { color: #e9a083; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
-		.about h2 { font-size: clamp(29px, 3.5vw, 43px); line-height: 1.14; margin: 0 0 13px; }
-		.about p { color: #d5ddd4; font-size: 13px; line-height: 1.8; margin: 0; max-width: 560px; }
-		footer { color: #77776e; font-size: 10px; padding: 19px 6.5vw; }
-
-		@media (max-width: 900px) {
-			.layout { display: block; }
-			.sidebar { align-items: center; border-bottom: 1px solid var(--line); border-right: 0; display: grid; gap: 16px; grid-template-columns: 1fr auto; padding: 20px 6vw 14px; }
-			.side-note, .sidebar-bottom, .nav-title { display: none; }
-			nav { display: flex; gap: 3px; grid-column: 1 / -1; grid-row: 2; overflow-x: auto; }
-			nav a { border-bottom: 2px solid transparent; border-left: 0; font-size: 11px; padding: 9px 10px; white-space: nowrap; }
-			nav a:hover, nav a:focus-visible { border-bottom-color: var(--orange); }
-			.topline { padding: 16px 6vw; }
-			.hero { gap: 32px; grid-template-columns: 1fr; margin: 12px auto 55px; padding: 0 6vw; }
-			h1 { font-size: clamp(48px, 13vw, 68px); }
-			.feature { min-height: 330px; }
-			.about { gap: 17px; grid-template-columns: 1fr; padding: 38px 8vw 42px; }
-			footer { padding: 18px 6vw; }
-		}
-
-		@media (prefers-reduced-motion: reduce) {
-			html { scroll-behavior: auto; }
-			*, *::before, *::after { transition-duration: .01ms !important; }
-		}
-	</style>
+	<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500..800;1,6..96,500..700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+	<script src="theme.js" defer></script>
 </head>
 <body>
 	<div class="layout">
 		<aside class="sidebar">
 			<a class="brand" href="#inicio" aria-label="VinyArt Studio, inicio">
 				<span class="brand-mark" aria-hidden="true"></span>
-				<span class="brand-wordmark"><strong>VinyArt</strong><small>Studio</small></span>
+				<span class="brand-text"><strong>VinyArt</strong><small>Studio</small></span>
 			</a>
-			<p class="side-note">Especial Rosalía</p>
-			<p class="nav-title">Explora</p>
+			<p class="menu-title">Explora</p>
 			<nav aria-label="Menú principal">
 				<a href="#inicio">Inicio</a>
 				<a href="#catalogo">Catálogo</a>
@@ -96,32 +26,104 @@
 			</nav>
 			<p class="sidebar-bottom">Música con historia.<br>Escucha a tu manera.</p>
 		</aside>
+
 		<main>
-			<div class="topline">
-				<p>VinyArt Studio · Especial Rosalía</p>
-				<p class="open-label">EL MAL QUERER en vinilo</p>
+			<div class="theme-toolbar">
+				<label class="theme-toggle" for="theme-toggle">
+					<input id="theme-toggle" type="checkbox" role="switch" aria-label="Cambiar entre modo claro y modo oscuro">
+					<span class="theme-switch" aria-hidden="true">
+						<span class="theme-thumb">
+							<svg class="sun-icon" viewBox="0 0 24 24" focusable="false">
+								<circle cx="12" cy="12" r="4"></circle>
+								<path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path>
+							</svg>
+							<svg class="moon-icon" viewBox="0 0 24 24" focusable="false">
+								<path d="M20.9 13A9 9 0 0 1 11 3.1 9 9 0 1 0 20.9 13Z"></path>
+							</svg>
+						</span>
+					</span>
+				</label>
 			</div>
 			<section class="hero" id="inicio" aria-labelledby="main-title">
 				<div class="hero-copy">
-					<p class="eyebrow">Una escucha con Rosalía</p>
-					<h1 id="main-title">Rosalía, entre<br>tradición y <em>vanguardia.</em></h1>
-					<p class="welcome">En VinyArt Studio celebramos <em>EL MAL QUERER</em>, el álbum con el que Rosalía llevó el flamenco a nuevos territorios. Pon la aguja y déjate llevar por cada detalle.</p>
-					<a class="catalog-link" id="catalogo" href="#nosotros">Ver catálogo <span aria-hidden="true">→</span></a>
+					<h1 id="main-title">VinyArt Studio</h1>
+					<p class="slogan">Rosalía, entre tradición y vanguardia.</p>
+					<p class="welcome">Bienvenido a VinyArt Studio. Celebramos <em>EL MAL QUERER</em>, el álbum con el que Rosalía llevó el flamenco a nuevos territorios. Pon la aguja y déjate llevar por cada detalle.</p>
+					<a class="catalog-link" href="#catalogo">Ver catálogo <span aria-hidden="true">→</span></a>
 				</div>
 				<div class="feature">
-					<img src="img/Rosalia_1_1.webp" alt="Portada del álbum EL MAL QUERER de ROSALÍA">
+					<img class="feature-record" src="img/vinilo-el-mal-querer.svg" alt="Vinilo rojo de EL MAL QUERER con la etiqueta dorada">
+					<figure class="feature-sleeve">
+						<span class="fallback" aria-hidden="true">EL MAL<br>QUERER</span>
+						<img src="img/rosalia-motomami.webp" alt="Portada del álbum EL MAL QUERER de ROSALÍA" onerror="this.remove()">
+					</figure>
 					<span class="image-caption">ROSALÍA · EL MAL QUERER</span>
 				</div>
+			</section>
 
-			</section>
-			<section class="about" id="nosotros" aria-labelledby="about-title">
-				<p class="about-label">El álbum destacado</p>
-				<div>
-					<h2 id="about-title">Una nueva forma de escuchar el flamenco.</h2>
-					<p>Publicado en 2018, <em>EL MAL QUERER</em> mezcla referencias del flamenco con una producción contemporánea. En VinyArt lo celebramos como una invitación a escuchar cada detalle y descubrir nuevas capas en cada cara del disco.</p>
+			<section class="catalog" id="catalogo" aria-labelledby="catalog-title">
+				<div class="section-head">
+					<h2 id="catalog-title">Catálogo Rosalía</h2>
+					<p>De la guitarra desnuda de Los Ángeles a la orquesta de LUX. Cinco discos en vinilo, de 2017 a 2025.</p>
 				</div>
+				<ul class="grid">
+					<li class="card">
+						<div class="tile t-angeles"><img src="img/vinilo-los-angeles.svg" alt="Vinilo negro de LOS ÁNGELES" loading="lazy"><img class="mini-cover" src="img/rosalia-losangeles.webp" alt="Portada del álbum LOS ÁNGELES" loading="lazy"></div>
+						<div class="card-body">
+							<h3>LOS ÁNGELES</h3>
+							<p class="meta">2017 · Vinilo negro · Álbum</p>
+							<p class="desc">Su primer disco: flamenco oscuro y acústico, con la voz como protagonista.</p>
+							<div class="card-foot"><span class="price">29,90 €</span><a class="buy" href="#catalogo" aria-label="Comprar LOS ÁNGELES">Comprar</a></div>
+						</div>
+					</li>
+					<li class="card">
+						<div class="tile t-emq"><img src="img/vinilo-el-mal-querer.svg" alt="Vinilo rojo de EL MAL QUERER" loading="lazy"><img class="mini-cover" src="img/rosalia-malquerer.webp" alt="Portada del álbum EL MAL QUERER" loading="lazy"></div>
+						<div class="card-body">
+							<h3>EL MAL QUERER</h3>
+							<p class="meta">2018 · Vinilo rojo · Álbum</p>
+							<p class="desc">Álbum conceptual dividido en capítulos que mezcla flamenco y producción contemporánea. El disco que celebramos en este especial.</p>
+							<div class="card-foot"><span class="price">34,90 €</span><a class="buy" href="#catalogo" aria-label="Comprar EL MAL QUERER">Comprar</a></div>
+						</div>
+					</li>
+					<li class="card">
+						<div class="tile t-moto"><img src="img/vinilo-motomami.svg" alt="Vinilo rosa de MOTOMAMI" loading="lazy"><img class="mini-cover" src="img/rosalia-motomami.webp" alt="Portada del álbum MOTOMAMI" loading="lazy"></div>
+						<div class="card-body">
+							<h3>MOTOMAMI</h3>
+							<p class="meta">2022 · Vinilo rosa · Álbum</p>
+							<p class="desc">Reggaetón, cumbia y pop envueltos en un universo motero lleno de mariposas. Un disco para poner alto.</p>
+							<div class="card-foot"><span class="price">32,90 €</span><a class="buy" href="#catalogo" aria-label="Comprar MOTOMAMI">Comprar</a></div>
+						</div>
+					</li>
+					<li class="card">
+						<div class="tile t-rr"><img src="img/vinilo-rr.svg" alt="Vinilo rojo con forma de corazón de RR" loading="lazy"><img class="mini-cover" src="img/RR vinilo.webp" alt="Portada del EP RR" loading="lazy"></div>
+						<div class="card-body">
+							<h3>RR</h3>
+							<p class="meta">2023 · Vinilo corazón · EP con Rauw Alejandro</p>
+							<p class="desc">Tres canciones, Beso, Vampiros y Promesa, en una edición con forma de corazón y arte en rojo y negro.</p>
+							<div class="card-foot"><span class="price">24,90 €</span><a class="buy" href="#catalogo" aria-label="Comprar RR">Comprar</a></div>
+						</div>
+					</li>
+					<li class="card">
+						<div class="tile t-lux"><img src="img/vinilo-lux.svg" alt="Vinilo blanco de LUX" loading="lazy"><img class="mini-cover" src="img/rosalia-lux.webp" alt="Portada del álbum LUX" loading="lazy"></div>
+						<div class="card-body">
+							<h3>LUX</h3>
+							<p class="meta">2025 · Vinilo blanco · Álbum</p>
+							<p class="desc">Su disco más ambicioso, grabado con la London Symphony Orchestra y bañado de blanco y misticismo.</p>
+							<div class="card-foot"><span class="price">39,90 €</span><a class="buy" href="#catalogo" aria-label="Comprar LUX">Comprar</a></div>
+						</div>
+					</li>
+				</ul>
 			</section>
-			<footer>VinyArt Studio · Una escucha con Rosalía</footer>
+
+			<section class="about" id="nosotros" aria-labelledby="about-title">
+				<div>
+					<h2 id="about-title">Sobre nosotros</h2>
+					<span class="rule" aria-hidden="true"></span>
+				</div>
+				<p>VinyArt Studio es una tienda de vinilos para escuchar sin prisa. Nacimos para celebrar la música de Rosalía y su manera de unir tradición y vanguardia: elegimos cada edición pensando en sacar el disco de la funda, ponerlo en el plato y escuchar una cara entera, con todos sus detalles.</p>
+			</section>
+
+			<footer>VinyArt Studio · Una escucha con Rosalía · Precios de ejemplo</footer>
 		</main>
 	</div>
 </body>
