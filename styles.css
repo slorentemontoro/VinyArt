@@ -70,7 +70,13 @@ main { min-width: 0; }
 
 /* Inicio: presentacion y portada destacada */
 .hero { align-items: center; background: var(--rose-soft); display: grid; gap: 4vw; grid-template-columns: minmax(280px, 1fr) minmax(300px, 1fr); min-height: 640px; overflow: hidden; padding: 70px 5vw 70px 5.5vw; }
-.hero h1 { color: var(--ink); font-size: clamp(54px, 7.4vw, 112px); font-weight: 700; letter-spacing: -.035em; line-height: .98; margin-bottom: 20px; }
+.hero-eyebrow { align-items: center; color: var(--rose-dark); display: flex; font-size: 11px; font-weight: 700; gap: 9px; letter-spacing: .16em; margin: 0 0 16px; }
+.hero-eyebrow > span:first-child { background: var(--rose); border-radius: 50%; box-shadow: 0 0 0 4px var(--surface); height: 7px; width: 7px; }
+.eyebrow-divider { color: var(--gold); }
+.hero h1 { color: var(--ink); font-size: clamp(44px, 5.2vw, 72px); font-weight: 700; letter-spacing: -.045em; line-height: 1.04; margin-bottom: 16px; }
+.title-period { color: var(--rose-dark); }
+.edition-badge { align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; color: var(--ink); display: inline-flex; font-size: 12px; font-weight: 700; gap: 9px; margin: 0 0 20px; padding: 7px 13px 7px 8px; }
+.edition-disc { background: radial-gradient(circle, var(--gold) 0 14%, var(--rose-dark) 15% 23%, #76545a 24% 38%, var(--rose) 39% 100%); border: 1px solid var(--rose-dark); border-radius: 50%; height: 20px; width: 20px; }
 .slogan { color: var(--rose-dark); font-family: var(--display); font-size: clamp(24px, 2.6vw, 34px); font-style: italic; font-weight: 500; line-height: 1.2; margin: 0 0 20px; }
 .welcome { color: var(--copy); font-size: 16px; margin: 0; max-width: 440px; }
 .offer-price { color: var(--rose-dark); font-family: var(--display); font-size: clamp(36px, 4vw, 48px); font-weight: 700; line-height: 1.1; margin: 18px 0 0; }
